@@ -1,0 +1,1291 @@
+.uix-container { & {
+  --uix-container-shadow: none;
+  --uix-container-border-size: 0;
+  --uix-container-padding: 0;
+  --uix-container-justify: flex-start;
+  --uix-container-align-items: stretch;
+  --uix-container-overflow: visible;
+  --uix-container-position: static;
+  --uix-container-max-resolution: none;
+  --uix-container-list-style-type: none;
+  --uix-container-height: auto;
+  --uix-container-text-color: var(--text-color);
+  --uix-container-background-color: transparent;
+  --uix-container-border-color: transparent;
+  --uix-container-width: auto;
+  --uix-container-gap: 0;
+  --uix-container-flex-wrap: nowrap;
+  --uix-container-border-radius: 4px;
+  --uix-container-rows: 1;
+  --uix-container-width: auto;
+  --uix-container-margin: 0;
+
+  flex-wrap: var(--uix-container-flex-wrap);
+  overflow-y: auto;
+  display: flex;
+  margin: var(--uix-container-margin);
+  background-color: var(--uix-container-background-color);
+  color: var(--uix-container-text-color);
+  border: var(--uix-container-border-size) solid var(--uix-container-border-color);
+  box-shadow: var(--uix-container-shadow);
+  width: var(--uix-container-width);
+  height: var(--uix-container-height);
+  gap: var(--uix-container-gap);
+  padding: var(--uix-container-padding);
+  justify-content: var(--uix-container-justify);
+  align-items: var(--uix-container-align-items);
+  overflow: var(--uix-container-overflow);
+  position: var(--uix-container-position);
+  max-width: var(--uix-container-max-resolution);
+}
+
+&[children-flex="1"] > * { flex: 1; }
+&[children-flex="2"] > * { flex: 2; }
+&[children-flex="3"] > * { flex: 3; }
+
+&[rows] {
+  > * {
+    flex: 1 1 calc(100% / var(--uix-container-rows) - 16px);
+  }
+}
+
+&:not([horizontal]) {
+  flex-direction: column;
+}
+
+&[reverse]:not([horizontal]) {
+  flex-direction: column-reverse;
+}
+
+&[reverse][horizontal] {
+  flex-direction: row-reverse;
+}
+
+&[grid] {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  &[grid] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  &[grid] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+&[grid] {
+  gap: 1rem;
+}
+
+&[rounded] {
+  border-radius: var(--uix-container-border-radius);
+}
+
+&[secondary] {
+  background-color: var(--color-secondary-30);
+}
+
+&[responsive] {
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+&[grow] {
+  flex-grow: 1;
+}
+
+&[shrink] {
+  flex-shrink: 1;
+}
+
+&[relative] {
+  position: relative;
+}
+
+&[gap='stack'] {
+  margin-right: -1rem;
+}
+
+[center] {
+  margin: auto;
+}
+
+[left] {
+  margin-right: auto;
+}
+
+[right] {
+  margin-left: auto;
+}
+
+[animate] {
+  transition: all 1s ease, opacity 1s ease;  
+}
+ }.uix-container { &[justify~="space-between"] { --uix-container-justify: space-between;  }
+ }
+.uix-container { &[padding~="sm"] { --uix-container-padding: 0.5rem;  }
+ }
+.uix-container { &[items~="center"] { --uix-container-align-items: center;  }
+ }
+.uix-container { &[position~="fixed"] { --uix-container-position: fixed;  }
+ }
+.uix-container { &[width~="full"] { --uix-container-width: 100%;  }
+ }
+.uix-container { &[height~="3xs"] { --uix-container-height: 50px;  }
+ }
+.uix-container { &[z-index~="100"] { z-index: 100;  }
+ }
+.uix-container { &[gap~="xs"] { --uix-container-gap: 0.25rem;  }
+ }
+.uix-container { &[width~="100%"] { --uix-container-width: 100%;  }
+ }
+.uix-container { &[height~="80px"] { --uix-container-height: 80px;  }
+ }
+.uix-icon { &[size~="lg"] { --uix-icon-size: calc(480px * 0.05);  }
+ }
+.uix-container { &[z-index~="1000"] { z-index: 1000;  }
+ }
+.uix-container { &[gap~="sm"] { --uix-container-gap: 0.5rem;  }
+ }
+.uix-container { &[gap~="lg"] { --uix-container-gap: 1.5rem;  }
+ }
+.uix-text { &[text~="center"] { --uix-text-align: center;  }
+ }
+.uix-text { &[heading~="xs"] { --uix-text-size: 0.69rem; --uix-text-font-weight: 700;  }
+ }
+.uix-link { &[size~="lg"] { --uix-text-size: 1.20rem;  }
+ }
+.uix-text { &[size~="lg"] { --uix-text-size: 1.20rem;  }
+ }
+.uix-link { &[weight~="semibold"] { --uix-text-font-weight: 600;  }
+ }
+.uix-text { &[weight~="semibold"] { --uix-text-font-weight: 600;  }
+ }
+.uix-button { &[size~="lg"] { --uix-text-size: 1.20rem;  }
+ }
+.uix-button { &[width~="fit"] { --uix-button-width: fit-content;  }
+ }
+.uix-link { &[width~="fit"] { width: fit-content;  }
+ }
+.uix-button { &[text~="center"] { --uix-text-align: center;  }
+ }
+.uix-link { &[text~="center"] { --uix-text-align: center;  }
+ }
+.uix-button { &[variant~="default"] { --uix-link-bg: var(--color-default-70); --uix-link-text-color: var(--color-default-50); --uix-link-hover-bg: var(--color-default-60); --uix-link-hover-text-color: var(--color-default-50); --uix-link-font-weight: var(--font-weight-semibold, 600);  }
+ }
+.uix-link { &[variant~="default"] { --uix-link-bg: var(--color-default-70); --uix-link-text-color: var(--color-default-50); --uix-link-hover-bg: var(--color-default-60); --uix-link-hover-text-color: var(--color-default-50); --uix-link-font-weight: var(--font-weight-semibold, 600);  }
+ }
+.uix-text { &[variant~="default"] { --uix-text-color: var(--color-default-60);  }
+ }
+.uix-button { &[padding~="md"] { --uix-link-padding: calc(1rem * 0.7);  }
+ }
+.uix-link { &[padding~="md"] { --uix-link-padding: calc(1rem * 0.7);  }
+ }
+.uix-button { &[size~="md"] { --uix-text-size: 1.00rem;  }
+ }
+.uix-link { &[size~="md"] { --uix-text-size: 1.00rem;  }
+ }
+.uix-text { &[size~="md"] { --uix-text-size: 1.00rem;  }
+ }
+.uix-button { &[size~="xs"] { --uix-text-size: 0.69rem;  }
+ }
+.uix-link { &[size~="xs"] { --uix-text-size: 0.69rem;  }
+ }
+.uix-text { &[size~="xs"] { --uix-text-size: 0.69rem;  }
+ }
+.uix-button { &[size~="2xl"] { --uix-text-size: 1.73rem;  }
+ }
+.uix-link { &[size~="2xl"] { --uix-text-size: 1.73rem;  }
+ }
+.uix-text { &[size~="2xl"] { --uix-text-size: 1.73rem;  }
+ }
+.theme-darkmode { &[text~="center"] { --uix-text-align: center;  }
+ }
+.theme-darkmode { &[size~="md"] { --uix-text-size: 1.00rem;  }
+ }
+.theme-darkmode { &[variant~="default"] { --uix-link-bg: var(--color-default-70); --uix-link-text-color: var(--color-default-50); --uix-link-hover-bg: var(--color-default-60); --uix-link-hover-text-color: var(--color-default-50); --uix-link-font-weight: var(--font-weight-semibold, 600);  }
+ }
+.theme-darkmode { &[width~="fit"] { --uix-button-width: fit-content;  }
+ }
+.theme-darkmode { &[padding~="md"] { --uix-link-padding: calc(1rem * 0.7);  }
+ }
+.uix-list { &[width~="fit-content"] { --uix-container-width: fit-content;  }
+ }
+.uix-container { &[width~="fit-content"] { --uix-container-width: fit-content;  }
+ }
+.uix-list { &[padding~="sm"] { --uix-container-padding: 0.5rem;  }
+ }
+.uix-list { &[gap~="md"] { --uix-container-gap: 1rem;  }
+ }
+.uix-container { &[gap~="md"] { --uix-container-gap: 1rem;  }
+ }
+.uix-navbar { &[height~="80px"] { --uix-container-height: 80px;  }
+ }
+.uix-list { &[height~="80px"] { --uix-container-height: 80px;  }
+ }
+.uix-navbar { &[width~="full"] { --uix-container-width: 100%;  }
+ }
+.uix-list { &[width~="full"] { --uix-container-width: 100%;  }
+ }
+.uix-icon { &[size~="2xl"] { --uix-icon-size: calc(1024px * 0.05);  }
+ }
+.uix-avatar { &[size~="sm"] { min-width: 40px; min-height: 40px;  }
+ }
+.uix-avatar { &[variant~="primary"] { --uix-avatar-background-color: var(--color-primary-30); --uix-avatar-text: var(--color-primary); --uix-avatar-ring: var(--color-primary);  }
+ }
+.uix-avatar { &[rounded~="rounded-full"] { border-radius: rounded-full;  }
+ }
+.uix-icon { &[size~="md"] { --uix-icon-size: calc(320px * 0.05);  }
+ }
+.uix-input { &[variant~="default"] { --uix-input-background-color: var(--color-default-1); --uix-input-border-color: var(--color-default-30); --uix-input-text-color: var(--color-default-90);  }
+ }
+.uix-input { &[size~="md"] { --uix-input-size: calc(320px * 0.04);  }
+ }
+.uix-grid { &[cols~="4"] { --uix-grid-cols: 4;  }
+ }
+.uix-grid { &[justify~="space-around"] { --uix-container-justify: space-around;  }
+ }
+.uix-container { &[justify~="space-around"] { --uix-container-justify: space-around;  }
+ }
+.uix-grid { &[gap~="md"] { --uix-container-gap: 1rem;  }
+ }
+.uix-grid { &[padding~="sm"] { --uix-container-padding: 0.5rem;  }
+ }
+.uix-icon { & {
+	--uix-icon-bg: none;
+	--uix-icon-color: currentColor;
+	--uix-icon-fill: none;
+	--uix-icon-stroke: currentColor;
+	--uix-icon-stroke-width: 2;
+	--uix-icon-size: 1rem;
+	display: inline-block;
+	vertical-align: middle;	
+	svg {
+		width: var(--uix-icon-size) !important;
+		height: var(--uix-icon-size) !important;
+	}
+	svg, path {
+	color: var(--uix-icon-color) !important;
+	fill: var(--uix-icon-fill) !important;
+	stroke: var(--uix-icon-stroke) !important;
+	stroke-width: var(--uix-icon-stroke-width) !important;
+	}
+}
+
+&[solid] {
+	background-color: black;
+	stroke: none;
+	fill: black;
+} }.rio-map { & {
+
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	> [map] {
+		background-size: cover;
+		background-position: center;
+		[pin] {
+				position: absolute;
+				transform: translate(-50%, -50%);
+					height: 50px;
+					aspect-ratio: 2/3;
+					mask: 
+						conic-gradient(from -30deg at bottom,#0000,#000 1deg 59deg,#0000 60deg) bottom/100% 50% no-repeat, 
+						radial-gradient(circle at 50% calc(100% / 3),#0000 21.5%,#000 22% 44%,#0000 44.5%);
+					background: #ec1a23;
+			
+		}
+	}
+} }.theme-darkmode { &[variant="default"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-default-100); --theme-darkmode-hover-background-color: var(--color-default-30); --theme-darkmode-text-color: var(--color-default-1); }
+&[variant="primary"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-primary-60); --theme-darkmode-hover-background-color: var(--color-primary-30); --theme-darkmode-text-color: var(--color-primary-1); }
+&[variant="secondary"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-secondary-60); --theme-darkmode-hover-background-color: var(--color-secondary-30); --theme-darkmode-text-color: var(--color-secondary-1); }
+&[variant="tertiary"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-tertiary-60); --theme-darkmode-hover-background-color: var(--color-tertiary-30); --theme-darkmode-text-color: var(--color-tertiary-1); }
+&[variant="success"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-success-60); --theme-darkmode-hover-background-color: var(--color-success-30); --theme-darkmode-text-color: var(--color-success-1); }
+&[variant="warning"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-warning-60); --theme-darkmode-hover-background-color: var(--color-warning-30); --theme-darkmode-text-color: var(--color-warning-1); }
+&[variant="error"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-error-60); --theme-darkmode-hover-background-color: var(--color-error-30); --theme-darkmode-text-color: var(--color-error-1); }
+&[variant="surface"] { --theme-darkmode-border-size: 0; --theme-darkmode-background-color: var(--color-surface-60); --theme-darkmode-hover-background-color: var(--color-surface-30); --theme-darkmode-text-color: var(--color-surface-1); }
+&[bordered][variant="default"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-default-30); --theme-darkmode-border-color: var(--color-default-40); --theme-darkmode-text-color: var(--color-default-100); }
+&[bordered][variant="primary"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-primary-30); --theme-darkmode-border-color: var(--color-primary-40); --theme-darkmode-text-color: var(--color-primary-100); }
+&[bordered][variant="secondary"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-secondary-30); --theme-darkmode-border-color: var(--color-secondary-40); --theme-darkmode-text-color: var(--color-secondary-100); }
+&[bordered][variant="tertiary"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-tertiary-30); --theme-darkmode-border-color: var(--color-tertiary-40); --theme-darkmode-text-color: var(--color-tertiary-100); }
+&[bordered][variant="success"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-success-30); --theme-darkmode-border-color: var(--color-success-40); --theme-darkmode-text-color: var(--color-success-100); }
+&[bordered][variant="warning"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-warning-30); --theme-darkmode-border-color: var(--color-warning-40); --theme-darkmode-text-color: var(--color-warning-100); }
+&[bordered][variant="error"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-error-30); --theme-darkmode-border-color: var(--color-error-40); --theme-darkmode-text-color: var(--color-error-100); }
+&[bordered][variant="surface"] { --theme-darkmode-border-size: 1px; --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-surface-30); --theme-darkmode-border-color: var(--color-surface-40); --theme-darkmode-text-color: var(--color-surface-100); }
+&[ghost][variant="default"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-default-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-default-100); }
+&[ghost][variant="primary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-primary-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-primary-100); }
+&[ghost][variant="secondary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-secondary-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-secondary-100); }
+&[ghost][variant="tertiary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-tertiary-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-tertiary-100); }
+&[ghost][variant="success"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-success-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-success-100); }
+&[ghost][variant="warning"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-warning-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-warning-100); }
+&[ghost][variant="error"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-error-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-error-100); }
+&[ghost][variant="surface"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-surface-30); --theme-darkmode-border-size: 0px; --theme-darkmode-text-color: var(--color-surface-100); }
+&[outline][variant="default"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-default-30); --theme-darkmode-text-color: var(--color-default-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="primary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-primary-30); --theme-darkmode-text-color: var(--color-primary-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="secondary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-secondary-30); --theme-darkmode-text-color: var(--color-secondary-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="tertiary"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-tertiary-30); --theme-darkmode-text-color: var(--color-tertiary-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="success"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-success-30); --theme-darkmode-text-color: var(--color-success-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="warning"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-warning-30); --theme-darkmode-text-color: var(--color-warning-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="error"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-error-30); --theme-darkmode-text-color: var(--color-error-90); --theme-darkmode-border-size: 1px; }
+&[outline][variant="surface"] { --theme-darkmode-background-color: transparent; --theme-darkmode-hover-background-color: var(--color-surface-30); --theme-darkmode-text-color: var(--color-surface-90); --theme-darkmode-border-size: 1px; }
+ }.uix-text { & {
+  --uix-text-gap: 0.5rem; 
+  --uix-text-align: left; 
+  --uix-text-margin-right: auto; 
+  --uix-text-size: 1rem;
+  --uix-text-color: var(--text-color, var(--color-default));
+  --uix-text-font-weight: 400; 
+  --uix-text-font-family: var(--font-family); 
+  --uix-text-font-sans: var(--font-family); 
+  --uix-text-font-mono: 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace; 
+  --uix-text-font-serif: 'Georgia', 'Times New Roman', serif;
+  --uix-text-line-height: 1.2; 
+  --uix-text-letter-spacing: 0;
+  --uix-text-text-transform: none;
+  --uix-text-cursor: inherit; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--uix-text-gap);
+  word-break: break-word;
+  font-size: var(--uix-text-size);
+  color: var(--uix-text-color);
+  font-weight: var(--uix-text-font-weight);
+  font-family: var(--uix-text-font-family);
+  line-height: var(--uix-text-line-height);
+  letter-spacing: var(--uix-text-letter-spacing);
+  text-transform: var(--uix-text-text-transform);
+  cursor: var(--uix-text-cursor);
+  display: inline;
+  text-align: var(--uix-text-align);
+  
+  &:not([text]) {
+    margin-right: var(--uix-text-margin-right);
+  }
+}
+ }.uix-link { & {
+  cursor: pointer;
+  &:hover {
+    color: var(--uix-link-hover-color, var(--color-primary-70));    
+  }
+  a, button {
+    cursor: pointer;
+    padding: var(--uix-link-padding);
+  }
+
+  color: var(--uix-link-text-color, var(--color-primary-70));
+  font-weight: var(--uix-link-font-weight, 600);
+  width: var(--uix-link-width, auto);
+  .uix-text-icon__element {
+    display: flex;
+    align-items: center;
+    gap: var(--uix-link-icon-gap, 0.5rem);
+    width: auto;
+    &[reverse][vertical] {
+      flex-direction: column-reverse;
+    }
+
+    &:not([reverse])[vertical] {
+      flex-direction: column;
+    }
+
+    &[reverse]:not([vertical]) {
+      flex-direction: row-reverse;
+    }
+
+    &:not([reverse]):not([vertical]) {
+      flex-direction: row;
+    }
+  }
+  transition: all 0.3s ease-in-out; 
+}
+
+&[active]:hover {
+  color: var(--uix-link-hover-text-color, var(--color-primary-40));
+}
+
+&:hover {
+  opacity: var(--uix-button-hover-opacity, 0.8);
+  &[dropdown] {
+    opacity: 1;
+  }
+  [tooltip] {
+    display: flex;
+  }
+}
+
+&[tooltip] {
+  display: inline-block;
+  &:hover {
+    [tooltip] {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  [tooltip] {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;    
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      left: 100%;       
+      transform: translateY(-50%);
+  }
+}
+
+&[position~="top"] [tooltip] {
+  bottom: 100%; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+&[position~="bottom"] [tooltip] {
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+&[position~="left"] [tooltip] {
+  top: 50%;
+  right: 100%; 
+  transform: translateY(-50%);
+}
+
+&[dropdown], &[tooltip] {
+  position: relative;
+}
+
+&[dropdown], &[accordion] {
+  flex-direction: column;
+}
+
+[dropdown], [accordion] {
+  display: none;
+}
+[dropdown] {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  min-width: 200px;
+  background-color: var(--color-primary-10); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .uix-link:hover, input {
+    background-color: var(--color-primary-20); 
+  }
+  & > .uix-link, input {
+    width: 100%;
+  }
+}
+
+&[selected] {
+  [dropdown], [accordion] {
+    display: flex;
+  }
+}
+ }.uix-button { &[variant="default"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-default-100); --uix-button-hover-background-color: var(--color-default-30); --uix-button-text-color: var(--color-default-1); }
+&[variant="primary"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-primary-60); --uix-button-hover-background-color: var(--color-primary-30); --uix-button-text-color: var(--color-primary-1); }
+&[variant="secondary"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-secondary-60); --uix-button-hover-background-color: var(--color-secondary-30); --uix-button-text-color: var(--color-secondary-1); }
+&[variant="tertiary"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-tertiary-60); --uix-button-hover-background-color: var(--color-tertiary-30); --uix-button-text-color: var(--color-tertiary-1); }
+&[variant="success"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-success-60); --uix-button-hover-background-color: var(--color-success-30); --uix-button-text-color: var(--color-success-1); }
+&[variant="warning"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-warning-60); --uix-button-hover-background-color: var(--color-warning-30); --uix-button-text-color: var(--color-warning-1); }
+&[variant="error"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-error-60); --uix-button-hover-background-color: var(--color-error-30); --uix-button-text-color: var(--color-error-1); }
+&[variant="surface"] { --uix-button-border-size: 0; --uix-button-background-color: var(--color-surface-60); --uix-button-hover-background-color: var(--color-surface-30); --uix-button-text-color: var(--color-surface-1); }
+&[bordered][variant="default"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-default-30); --uix-button-border-color: var(--color-default-40); --uix-button-text-color: var(--color-default-100); }
+&[bordered][variant="primary"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-primary-30); --uix-button-border-color: var(--color-primary-40); --uix-button-text-color: var(--color-primary-100); }
+&[bordered][variant="secondary"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-secondary-30); --uix-button-border-color: var(--color-secondary-40); --uix-button-text-color: var(--color-secondary-100); }
+&[bordered][variant="tertiary"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-tertiary-30); --uix-button-border-color: var(--color-tertiary-40); --uix-button-text-color: var(--color-tertiary-100); }
+&[bordered][variant="success"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-success-30); --uix-button-border-color: var(--color-success-40); --uix-button-text-color: var(--color-success-100); }
+&[bordered][variant="warning"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-warning-30); --uix-button-border-color: var(--color-warning-40); --uix-button-text-color: var(--color-warning-100); }
+&[bordered][variant="error"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-error-30); --uix-button-border-color: var(--color-error-40); --uix-button-text-color: var(--color-error-100); }
+&[bordered][variant="surface"] { --uix-button-border-size: 1px; --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-surface-30); --uix-button-border-color: var(--color-surface-40); --uix-button-text-color: var(--color-surface-100); }
+&[ghost][variant="default"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-default-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-default-100); }
+&[ghost][variant="primary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-primary-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-primary-100); }
+&[ghost][variant="secondary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-secondary-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-secondary-100); }
+&[ghost][variant="tertiary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-tertiary-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-tertiary-100); }
+&[ghost][variant="success"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-success-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-success-100); }
+&[ghost][variant="warning"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-warning-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-warning-100); }
+&[ghost][variant="error"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-error-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-error-100); }
+&[ghost][variant="surface"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-surface-30); --uix-button-border-size: 0px; --uix-button-text-color: var(--color-surface-100); }
+&[outline][variant="default"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-default-30); --uix-button-text-color: var(--color-default-90); --uix-button-border-size: 1px; }
+&[outline][variant="primary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-primary-30); --uix-button-text-color: var(--color-primary-90); --uix-button-border-size: 1px; }
+&[outline][variant="secondary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-secondary-30); --uix-button-text-color: var(--color-secondary-90); --uix-button-border-size: 1px; }
+&[outline][variant="tertiary"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-tertiary-30); --uix-button-text-color: var(--color-tertiary-90); --uix-button-border-size: 1px; }
+&[outline][variant="success"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-success-30); --uix-button-text-color: var(--color-success-90); --uix-button-border-size: 1px; }
+&[outline][variant="warning"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-warning-30); --uix-button-text-color: var(--color-warning-90); --uix-button-border-size: 1px; }
+&[outline][variant="error"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-error-30); --uix-button-text-color: var(--color-error-90); --uix-button-border-size: 1px; }
+&[outline][variant="surface"] { --uix-button-background-color: transparent; --uix-button-hover-background-color: var(--color-surface-30); --uix-button-text-color: var(--color-surface-90); --uix-button-border-size: 1px; }
+
+& {
+  --uix-button-font-weight: 700; 
+  --uix-button-text-color: var(--color-default-80);
+  --uix-button-background-color: var(--color-default-100);
+  --uix-button-hover-background-color: var(--color-default-20);
+  --uix-button-border-radius: var(--radius-sm);
+  --uix-button-border-size:  0;
+  --uix-button-border-color: var(--color-default-40);
+  --uix-button-hover-opacity:  0.9;
+  --uix-button-active-scale: 0.9;
+  --uix-button-width: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: var(--uix-button-font-weight);
+  color: var(--uix-button-text-color);
+  background-color: var(--uix-button-background-color);
+  width: var(--uix-button-width);
+  height: 100%;
+  border: var(--uix-button-border-size) solid var(--uix-button-border-color);
+  border-radius: var(--uix-button-border-radius);
+  &:hover {
+    opacity: var(--uix-button-hover-opacity); 
+    background-color: var(--uix-button-hover-background-color);
+  }
+  
+  &:hover:active {
+    opacity: var(--uix-button-hover-opacity);
+  }
+
+  button, a, input {
+    word-break: keep-all;
+    border-radius: var(--uix-button-border-radius);
+    flex-basis: 100%;
+    justify-content: var(--uix-text-align);
+  }
+
+  .uix-icon, button, input, a {
+    cursor: pointer;      
+  }
+}
+ }.uix-navbar { & {
+  --uix-navbar-text-color: var(--color-default-90);
+  --uix-navbar-hover-text-color: var(--color-surface-80);
+  --uix-navbar-border-radius: 0px;
+  --uix-navbar-border-color: var(--color-default-60);
+  --uix-navbar-border-size: 1px;
+  --uix-navbar-border-style: solid;
+  --uix-navbar-hover-background-color: var(--color-default-40);
+  --uix-container-position: var(--uix-navbar-position);
+
+  &[docked] {
+    --uix-list-button-radius: 0;
+    border-bottom: 0;
+    position: fixed;
+    bottom: 0px;
+    background-color: var(--uix-navbar-background-color, var(--color-default-5));
+    > * {
+      border-right: 0;
+      border-bottom: 0;
+      &:first-child {
+        border-left: 0;
+      }
+    }
+  }
+}
+ }.uix-avatar { & {
+  --uix-avatar-background-color: var(--color-default-30, #d1d5db); 
+  --uix-avatar-text: var(--color-default, #000000); 
+  --uix-avatar-ring: var(--color-default, #000000); 
+  --uix-avatar-ring-width: 2px;
+  --uix-avatar-ring-offset-width: 2px;
+  --uix-avatar-border-radius: 50%; 
+  --uix-avatar-width: 3rem;
+  --uix-avatar-height: 3rem; 
+  display: block;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+
+  box-shadow: var(--uix-avatar-ring-width, 0px) var(--uix-avatar-ring, transparent);
+  border-radius: var(--uix-avatar-border-radius, 50%);
+  background-color: var(--uix-avatar-background-color, var(--color-default-30));
+  color: var(--uix-avatar-text, var(--color-default));
+  width: var(--uix-avatar-width, 3rem); 
+  height: var(--uix-avatar-height, 3rem);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+&[ring] {
+  box-shadow: 0 0 0 var(--uix-avatar-ring-width, 2px) var(--uix-avatar-ring, var(--color-default));
+}
+
+&[presence="online"]::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 0.625rem; 
+  height: 0.625rem;
+  background-color: var(--color-success, #10b981); 
+  border: 2px solid white; 
+  border-radius: 50%; 
+}
+
+&[presence="offline"]::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem; 
+  background-color: var(--color-surface-50, #6b7280); 
+  border: 2px solid white; 
+  border-radius: 50%; 
+}
+
+ }.uix-input { & {
+  --uix-input-background-color: var(--color-default-10);
+  --uix-input-border-color: var(--color-default-70);
+  --uix-input-text-color: var(--color-default-95); 
+  --uix-input-border-radius: 0.375rem; 
+  --uix-input-padding-x: 5px; 
+  --uix-input-padding-y: 5px; 
+  --uix-input-font-size: 1rem; 
+  --uix-input-focus-ring-width: 2px; 
+  --uix-input-focus-ring-offset-width: 2px;
+  --uix-container-height: var(--uix-input-height, 2.5rem);
+
+  display: flex;
+  width: 100%; 
+  position: relative;
+
+  width: 100%; 
+  height: var(--uix-input-height, 2.5rem); 
+  border-radius: var(--uix-input-border-radius); 
+  border: 2px solid var(--uix-input-border-color); 
+  font-size: var(--uix-input-font-size); 
+  background-color: var(--uix-input-background-color);
+  color: var(--uix-input-text-color);
+
+  &:focus {
+    outline: none;outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+  /* Default (text-based) inputs */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  input[type="decimal"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"] {
+    width: 100%;
+    outline: none;
+    color: var(--uix-input-text-color);
+    background-color: transparent;
+    padding: var(--uix-input-padding-x) var(--uix-input-padding-y);
+    border: 0;
+    &:focus + label, &:not(:placeholder-shown) + label {
+      transition: margin-top 0.3s ease, font-size 0.3s ease;
+      margin-top: -0.4rem;
+      font-size: 0.6rem;
+      cursor: default;
+      .uix-text {
+        --uix-text-size: 0.8rem;
+      }
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none;outline-style: none;
+      box-shadow: none;
+      border-color: transparent;
+      
+      &::placeholder {
+        color: var(--uix-input-text-color);
+      }
+    }
+  }
+  
+
+  label {
+    .uix-text {
+      --uix-text-font-weight: 600;
+    }
+    cursor: text;
+    position: absolute;
+    margin-top: 0.5rem; 
+    font-family: monospace; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase; 
+    font-weight: 600;
+    margin-left: 0.75rem;
+    padding-right: 0.5rem; 
+    padding-left: 0.25rem;
+    background-color: var(--uix-input-background-color);
+    color: var(--uix-input-text-color);
+    transition: margin-top 0.3s ease, font-size 0.3s ease;
+  }
+
+  label[required]::after {
+    content: '*';
+    color: var(--color-error-50); 
+  }
+
+  &:not([checkbox]):not([radio]) input:focus-visible {
+    outline: none; 
+    box-shadow: 0 0 0 var(--uix-input-focus-ring-width) var(--uix-input-border-color);
+  }
+  
+  &:not([checkbox]):not([radio]) input:disabled {
+    cursor: not-allowed; 
+    opacity: 0.6;
+  }
+
+  /* Checkbox / Radio styling */
+  &[checkbox],
+  &[radio] {
+    border: 0;
+    align-items: center;
+    height: auto;
+    width: auto;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Adjust label for checkbox and radio to sit inline */
+  &[checkbox] label,
+  &[radio] label {
+    position: static;
+    margin-top: 0;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 0.5rem;    
+    text-transform: none;
+    font-family: inherit;
+    letter-spacing: normal;
+    font-weight: normal;
+
+    .uix-text {
+      --uix-text-font-weight: 400;
+    }
+  }
+
+  /* Checkbox and radio input (native look or minimal adjustments) */
+  &[checkbox] input[type="checkbox"],
+  &[radio] input[type="radio"] {
+    width: var(--uix-input-size);
+    height: var(--uix-input-size);
+    margin: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;    
+  }
+
+  &[checkbox] input[type="checkbox"]:disabled,
+  &[radio] input[type="radio"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+ }.uix-grid { & {
+  display: grid;
+  grid-template-rows: var(--uix-grid-rows, auto);
+  grid-template-columns: var(--uix-grid-cols, 1fr);
+  gap: var(--uix-container-gap, 0);
+  grid-template-areas: var(--uix-grid-template-areas, none);
+}
+
+@media (min-width: 640px) {
+  & {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Distribute items evenly */
+  }
+}
+
+@media (min-width: 768px) {
+  & {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Maintain even spacing */
+  }
+}
+
+@media (min-width: 1024px) {
+  & {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure equal size */
+  }
+}
+
+&[rows] {
+  grid-template-rows: repeat(var(--uix-grid-rows), 1fr); /* Equal row height */
+}
+
+&[cols] {
+  grid-template-columns: repeat(var(--uix-grid-cols), 1fr); /* Equal column width */
+}
+
+&[gap='stack'] {
+  gap: var(--uix-grid-gap);
+}
+
+&[template-areas] {
+  grid-template-areas: var(--uix-grid-template-areas);
+}
+
+& > * {
+  /* Make all children occupy equal space */
+  width: 100%;
+  height: 100%;
+}
+ }.uix-container { &[padding~="lg"] { --uix-container-padding: 1.5rem;  }
+ }
+.uix-container { &[overflow~="auto"] { --uix-container-overflow: auto;  }
+ }
+.uix-link { &[weight~="bold"] { --uix-text-font-weight: 700;  }
+ }
+.uix-text { &[weight~="bold"] { --uix-text-font-weight: 700;  }
+ }
+.uix-card { &[padding~="xs-sm"] { --uix-container-padding: 0.25rem 0.5rem;  }
+ }
+.uix-container { &[padding~="xs-sm"] { --uix-container-padding: 0.25rem 0.5rem;  }
+ }
+.uix-card { &[margin~="sm"] { --uix-container-margin: 0.5rem;  }
+ }
+.uix-container { &[margin~="sm"] { --uix-container-margin: 0.5rem;  }
+ }
+.uix-card { &[justify~="space-between"] { --uix-container-justify: space-between;  }
+ }
+.uix-card { &[shadow~="md"] { --uix-container-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);  }
+ }
+.uix-container { &[shadow~="md"] { --uix-container-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);  }
+ }
+.uix-card { &[gap~="md"] { --uix-container-gap: 1rem;  }
+ }
+.uix-card { &[variant~="default"] { --background-color: var(--color-default-1); --text-color: var(--color-default-90); --uix-card-border-color: var(--color-default);  }
+ }
+.uix-card { & {
+  /* Initialize card variables */
+  --uix-card-width: auto;
+  --uix-card-padding: var(--uix-container-padding, 0);
+  --uix-card-border-size: var(--uix-container-border-size, 0px);
+  --uix-card-border-radius: var(--radius-md);
+  --uix-card-background-color: var(--color-default-1, #f0f0f0);
+  --uix-card-border-color: var(--uix-container-border-color, var(--color-default, #cccccc));
+  --uix-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --uix-card-min-height: var(--uix-container-min-height, 50px);
+  --uix-card-gap: var(--uix-container-gap, 0);
+  --uix-card-height: auto;
+  --uix-card-justify: var(--uix-container-justify, flex-start);
+  --uix-card-align-items: var(--uix-container-align-items, stretch);
+  --uix-card-overflow: var(--uix-container-overflow, visible);
+  --uix-card-position: var(--uix-container-position, static);
+  --uix-card-list-style-type: var(--uix-container-list-style-type, none);
+  --uix-card-text-color: var(--uix-container-text-color, var(--uix-text-color));
+
+  /* Apply variables */
+  border-width: var(--uix-card-border-size);
+  border-radius: var(--uix-card-border-radius);
+  background-color: var(--uix-card-background-color);
+  border-color: var(--uix-card-border-color); 
+  box-shadow: var(--uix-card-shadow);
+  width: var(--uix-card-width); 
+  min-height: var(--uix-card-min-height);
+  gap: var(--uix-card-gap);
+  padding: var(--uix-card-padding);
+  height: var(--uix-card-height);
+  justify-content: var(--uix-card-justify);
+  align-items: var(--uix-card-align-items);
+  overflow: var(--uix-card-overflow);
+  position: var(--uix-card-position);
+  list-style-type: var(--uix-card-list-style-type);
+  color: var(--uix-card-text-color);
+
+  &[clickable], &[clickable] * {
+    cursor: pointer;
+  }
+
+  /* Adjust padding for the last child */
+  > :last-child.uix-join {
+    margin-left: calc(-1 * var(--uix-card-padding));
+    margin-right: calc(-1 * var(--uix-card-padding));
+    margin-bottom: calc(-1 * var(--uix-card-padding));
+    padding-bottom: 0;
+
+    border-radius: var(--uix-card-border-radius) !important;  
+    .uix-button {
+      border-radius: 0 !important;
+      border-top-right-radius: 0 !important;      
+      &:last-child {
+        border-bottom-right-radius: var(--uix-card-border-radius) !important;
+      }
+      &:first-child {
+        border-right-width: 0;
+        border-bottom-left-radius: var(--uix-card-border-radius) !important;
+      }
+    }
+  }
+
+  /* Horizontal handling */
+  &[horizontal] > :last-child.uix-join {
+    margin-top: calc(-1 * var(--uix-card-padding));
+    margin-bottom: calc(-1 * var(--uix-card-padding));
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+ }.uix-card { &[padding~="lg"] { --uix-container-padding: 1.5rem;  }
+ }
+.uix-card { &[margin~="md"] { --uix-container-margin: 1rem;  }
+ }
+.uix-container { &[margin~="md"] { --uix-container-margin: 1rem;  }
+ }
+.uix-text { &[size~="sm"] { --uix-text-size: 0.83rem;  }
+ }
+.uix-text { &[size~="xl"] { --uix-text-size: 1.44rem;  }
+ }
+.uix-card { &[padding~="md"] { --uix-container-padding: 1rem;  }
+ }
+.uix-container { &[padding~="md"] { --uix-container-padding: 1rem;  }
+ }
+.uix-textarea { &[variant~="default"] { --uix-textarea-background-color: var(--color-default-50); --uix-textarea-border-color: var(--color-default-30); --uix-textarea-focus-ring-color: var(--color-default-20); --uix-textarea-focus-border-color: var(--color-default-60);  }
+ }
+.uix-textarea { &[size~="md"] { --uix-textarea-width: var(--size-md, 320px); --uix-textarea-height: var(--size-md, 320px);  }
+ }
+.uix-checkbox { &[variant~="default"] { accent: var(--color-default-60); background: var(--color-default-60); border: var(--color-default-60);  }
+ }
+.uix-checkbox { &[size~="sm"] { --uix-checkbox-width: calc(200px * 0.1); --uix-checkbox-height: calc(200px * 0.1);  }
+ }
+.uix-form { & {
+  display: flex;
+  flex-direction: column; /* flex-col equivalent */
+  gap: 1.5rem; /* gap-6 equivalent */
+  padding-top: 1rem; /* pt-4 equivalent */
+}
+ }.uix-textarea { & {
+  --uix-textarea-background-color: var(--color-default-10); 
+  --uix-textarea-border-color: var(--color-default-30); 
+  --uix-textarea-focus-ring-color: var(--color-default-20); 
+  --uix-textarea-focus-border-color: var(--color-default-60);
+  --uix-textarea-padding: var(--spacing-md); 
+
+  display: block;
+  width: 100%; 
+  appearance: none;
+  outline: none; 
+
+  & .uix-textarea__input {
+    border-width: var(--border-size, 1px); 
+    border-color: var(--uix-textarea-border-color);
+    background-color: var(--uix-textarea-background-color);
+    width: 100%; 
+    height: 100%; 
+    display: block;
+  }
+
+  &:not([size]) {
+    padding: var(--uix-textarea-padding);
+  }
+  
+  & .uix-textarea__input:focus {
+    border-color: var(--uix-textarea-focus-border-color);
+    box-shadow: 0 0 0 3px var(--uix-textarea-focus-ring-color);
+  }
+}
+ }.uix-checkbox { & {
+  --uix-checkbox-width: 1rem; /* Example size for 'sm' */
+  --uix-checkbox-height: 1rem; /* Example size for 'sm' */
+  --uix-checkbox-accent-color: var(--color-default-60, #6b7280); /* Default accent color */
+  --uix-checkbox-bg: var(--color-default-60, #6b7280); /* Default checked background color */
+  --uix-checkbox-border-color: var(--color-default-60, #6b7280); /* Default checked border color */
+
+  display: block;
+
+  .uix-checkbox__element {
+    width: var(--uix-checkbox-width); /* Dynamic width */
+    height: var(--uix-checkbox-height); /* Dynamic height */
+    accent-color: var(--uix-checkbox-accent-color); /* Accent color */
+  }
+  .uix-checkbox__element:checked {
+    background-color: var(--uix-checkbox-bg); /* Checked background color */
+    border-color: var(--uix-checkbox-border-color); /* Checked border color */
+  }
+} }.uix-input { &[size~=""] { --uix-input-size: ;  }
+ }
+.uix-textarea { &[size~=""] { --uix-textarea-width: var(--size-, undefinedpx); --uix-textarea-height: var(--size-, undefinedpx);  }
+ }
+.uix-text { &[size~=""] { --uix-text-size: 0.48rem;  }
+ }
+.uix-form-control { & {
+  padding-top: 0.5rem; 
+  padding-bottom: 0.5rem;
+}
+
+ }
+body {
+  font-family: var(--font-family);
+}
+
+html, body {
+  font-family: var(--font-family);
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  width: 100%;
+  height: 100vh;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 18px; 
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  box-sizing: border-box;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+
+button, textarea, select {
+  background-color: inherit;
+  border-width: 0;
+  color: inherit;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  overflow-wrap: break-word;
+}
+
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  margin-right: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  &:hover {
+    scrollbar-color: rgba(154, 153, 150, 0.8) transparent;
+  }
+  border-radius: 10px;
+  border: none;
+}
+
+*::-webkit-scrollbar-button {
+  background: transparent;
+  color: transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  &:hover {
+    scrollbar-color: rgba(154, 153, 150, 0.8) transparent;
+  }
+}
+
+
+/* Global CSS rules */
+[full] {
+  width: 100%;
+  min-height: 100%;
+}
+
+[grow] {
+  flex-grow: 1;
+}
+.dark {
+  --color-default-0: color-mix(in hsl, var(--color-default), black 100%) !important;
+  --color-default-1: color-mix(in hsl, var(--color-default), black 98%) !important;
+  --color-default-5: color-mix(in hsl, var(--color-default), black 90%) !important;
+  --color-default-10: color-mix(in hsl, var(--color-default), black 80%) !important;
+  --color-default-20: color-mix(in hsl, var(--color-default), black 60%) !important;
+  --color-default-30: color-mix(in hsl, var(--color-default), black 40%) !important;
+  --color-default-40: color-mix(in hsl, var(--color-default), black 20%) !important;
+  --color-default-50: color-mix(in hsl, var(--color-default), black 0%) !important;
+  --color-default-60: color-mix(in hsl, white 20%, var(--color-default)) !important;
+  --color-default-70: color-mix(in hsl, white 30%, var(--color-default)) !important;
+  --color-default-80: color-mix(in hsl, white 40%, var(--color-default)) !important;
+  --color-default-90: color-mix(in hsl, white 55%, var(--color-default)) !important;
+  --color-default-95: color-mix(in hsl, white 65%, var(--color-default)) !important;
+  --color-default-99: color-mix(in hsl, white 80%, var(--color-default)) !important;
+  --color-default-100: color-mix(in hsl, white 100%, var(--color-default)) !important;
+  --color-primary-0: color-mix(in hsl, var(--color-primary), black 100%) !important;
+  --color-primary-1: color-mix(in hsl, var(--color-primary), black 98%) !important;
+  --color-primary-5: color-mix(in hsl, var(--color-primary), black 90%) !important;
+  --color-primary-10: color-mix(in hsl, var(--color-primary), black 80%) !important;
+  --color-primary-20: color-mix(in hsl, var(--color-primary), black 60%) !important;
+  --color-primary-30: color-mix(in hsl, var(--color-primary), black 40%) !important;
+  --color-primary-40: color-mix(in hsl, var(--color-primary), black 20%) !important;
+  --color-primary-50: color-mix(in hsl, var(--color-primary), black 0%) !important;
+  --color-primary-60: color-mix(in hsl, white 20%, var(--color-primary)) !important;
+  --color-primary-70: color-mix(in hsl, white 30%, var(--color-primary)) !important;
+  --color-primary-80: color-mix(in hsl, white 40%, var(--color-primary)) !important;
+  --color-primary-90: color-mix(in hsl, white 55%, var(--color-primary)) !important;
+  --color-primary-95: color-mix(in hsl, white 65%, var(--color-primary)) !important;
+  --color-primary-99: color-mix(in hsl, white 80%, var(--color-primary)) !important;
+  --color-primary-100: color-mix(in hsl, white 100%, var(--color-primary)) !important;
+  --color-secondary-0: color-mix(in hsl, var(--color-secondary), black 100%) !important;
+  --color-secondary-1: color-mix(in hsl, var(--color-secondary), black 98%) !important;
+  --color-secondary-5: color-mix(in hsl, var(--color-secondary), black 90%) !important;
+  --color-secondary-10: color-mix(in hsl, var(--color-secondary), black 80%) !important;
+  --color-secondary-20: color-mix(in hsl, var(--color-secondary), black 60%) !important;
+  --color-secondary-30: color-mix(in hsl, var(--color-secondary), black 40%) !important;
+  --color-secondary-40: color-mix(in hsl, var(--color-secondary), black 20%) !important;
+  --color-secondary-50: color-mix(in hsl, var(--color-secondary), black 0%) !important;
+  --color-secondary-60: color-mix(in hsl, white 20%, var(--color-secondary)) !important;
+  --color-secondary-70: color-mix(in hsl, white 30%, var(--color-secondary)) !important;
+  --color-secondary-80: color-mix(in hsl, white 40%, var(--color-secondary)) !important;
+  --color-secondary-90: color-mix(in hsl, white 55%, var(--color-secondary)) !important;
+  --color-secondary-95: color-mix(in hsl, white 65%, var(--color-secondary)) !important;
+  --color-secondary-99: color-mix(in hsl, white 80%, var(--color-secondary)) !important;
+  --color-secondary-100: color-mix(in hsl, white 100%, var(--color-secondary)) !important;
+  --color-tertiary-0: color-mix(in hsl, var(--color-tertiary), black 100%) !important;
+  --color-tertiary-1: color-mix(in hsl, var(--color-tertiary), black 98%) !important;
+  --color-tertiary-5: color-mix(in hsl, var(--color-tertiary), black 90%) !important;
+  --color-tertiary-10: color-mix(in hsl, var(--color-tertiary), black 80%) !important;
+  --color-tertiary-20: color-mix(in hsl, var(--color-tertiary), black 60%) !important;
+  --color-tertiary-30: color-mix(in hsl, var(--color-tertiary), black 40%) !important;
+  --color-tertiary-40: color-mix(in hsl, var(--color-tertiary), black 20%) !important;
+  --color-tertiary-50: color-mix(in hsl, var(--color-tertiary), black 0%) !important;
+  --color-tertiary-60: color-mix(in hsl, white 20%, var(--color-tertiary)) !important;
+  --color-tertiary-70: color-mix(in hsl, white 30%, var(--color-tertiary)) !important;
+  --color-tertiary-80: color-mix(in hsl, white 40%, var(--color-tertiary)) !important;
+  --color-tertiary-90: color-mix(in hsl, white 55%, var(--color-tertiary)) !important;
+  --color-tertiary-95: color-mix(in hsl, white 65%, var(--color-tertiary)) !important;
+  --color-tertiary-99: color-mix(in hsl, white 80%, var(--color-tertiary)) !important;
+  --color-tertiary-100: color-mix(in hsl, white 100%, var(--color-tertiary)) !important;
+  --color-success-0: color-mix(in hsl, var(--color-success), black 100%) !important;
+  --color-success-1: color-mix(in hsl, var(--color-success), black 98%) !important;
+  --color-success-5: color-mix(in hsl, var(--color-success), black 90%) !important;
+  --color-success-10: color-mix(in hsl, var(--color-success), black 80%) !important;
+  --color-success-20: color-mix(in hsl, var(--color-success), black 60%) !important;
+  --color-success-30: color-mix(in hsl, var(--color-success), black 40%) !important;
+  --color-success-40: color-mix(in hsl, var(--color-success), black 20%) !important;
+  --color-success-50: color-mix(in hsl, var(--color-success), black 0%) !important;
+  --color-success-60: color-mix(in hsl, white 20%, var(--color-success)) !important;
+  --color-success-70: color-mix(in hsl, white 30%, var(--color-success)) !important;
+  --color-success-80: color-mix(in hsl, white 40%, var(--color-success)) !important;
+  --color-success-90: color-mix(in hsl, white 55%, var(--color-success)) !important;
+  --color-success-95: color-mix(in hsl, white 65%, var(--color-success)) !important;
+  --color-success-99: color-mix(in hsl, white 80%, var(--color-success)) !important;
+  --color-success-100: color-mix(in hsl, white 100%, var(--color-success)) !important;
+  --color-warning-0: color-mix(in hsl, var(--color-warning), black 100%) !important;
+  --color-warning-1: color-mix(in hsl, var(--color-warning), black 98%) !important;
+  --color-warning-5: color-mix(in hsl, var(--color-warning), black 90%) !important;
+  --color-warning-10: color-mix(in hsl, var(--color-warning), black 80%) !important;
+  --color-warning-20: color-mix(in hsl, var(--color-warning), black 60%) !important;
+  --color-warning-30: color-mix(in hsl, var(--color-warning), black 40%) !important;
+  --color-warning-40: color-mix(in hsl, var(--color-warning), black 20%) !important;
+  --color-warning-50: color-mix(in hsl, var(--color-warning), black 0%) !important;
+  --color-warning-60: color-mix(in hsl, white 20%, var(--color-warning)) !important;
+  --color-warning-70: color-mix(in hsl, white 30%, var(--color-warning)) !important;
+  --color-warning-80: color-mix(in hsl, white 40%, var(--color-warning)) !important;
+  --color-warning-90: color-mix(in hsl, white 55%, var(--color-warning)) !important;
+  --color-warning-95: color-mix(in hsl, white 65%, var(--color-warning)) !important;
+  --color-warning-99: color-mix(in hsl, white 80%, var(--color-warning)) !important;
+  --color-warning-100: color-mix(in hsl, white 100%, var(--color-warning)) !important;
+  --color-error-0: color-mix(in hsl, var(--color-error), black 100%) !important;
+  --color-error-1: color-mix(in hsl, var(--color-error), black 98%) !important;
+  --color-error-5: color-mix(in hsl, var(--color-error), black 90%) !important;
+  --color-error-10: color-mix(in hsl, var(--color-error), black 80%) !important;
+  --color-error-20: color-mix(in hsl, var(--color-error), black 60%) !important;
+  --color-error-30: color-mix(in hsl, var(--color-error), black 40%) !important;
+  --color-error-40: color-mix(in hsl, var(--color-error), black 20%) !important;
+  --color-error-50: color-mix(in hsl, var(--color-error), black 0%) !important;
+  --color-error-60: color-mix(in hsl, white 20%, var(--color-error)) !important;
+  --color-error-70: color-mix(in hsl, white 30%, var(--color-error)) !important;
+  --color-error-80: color-mix(in hsl, white 40%, var(--color-error)) !important;
+  --color-error-90: color-mix(in hsl, white 55%, var(--color-error)) !important;
+  --color-error-95: color-mix(in hsl, white 65%, var(--color-error)) !important;
+  --color-error-99: color-mix(in hsl, white 80%, var(--color-error)) !important;
+  --color-error-100: color-mix(in hsl, white 100%, var(--color-error)) !important;
+  --color-surface-0: color-mix(in hsl, var(--color-surface), black 100%) !important;
+  --color-surface-1: color-mix(in hsl, var(--color-surface), black 98%) !important;
+  --color-surface-5: color-mix(in hsl, var(--color-surface), black 90%) !important;
+  --color-surface-10: color-mix(in hsl, var(--color-surface), black 80%) !important;
+  --color-surface-20: color-mix(in hsl, var(--color-surface), black 60%) !important;
+  --color-surface-30: color-mix(in hsl, var(--color-surface), black 40%) !important;
+  --color-surface-40: color-mix(in hsl, var(--color-surface), black 20%) !important;
+  --color-surface-50: color-mix(in hsl, var(--color-surface), black 0%) !important;
+  --color-surface-60: color-mix(in hsl, white 20%, var(--color-surface)) !important;
+  --color-surface-70: color-mix(in hsl, white 30%, var(--color-surface)) !important;
+  --color-surface-80: color-mix(in hsl, white 40%, var(--color-surface)) !important;
+  --color-surface-90: color-mix(in hsl, white 55%, var(--color-surface)) !important;
+  --color-surface-95: color-mix(in hsl, white 65%, var(--color-surface)) !important;
+  --color-surface-99: color-mix(in hsl, white 80%, var(--color-surface)) !important;
+  --color-surface-100: color-mix(in hsl, white 100%, var(--color-surface)) !important;
+}
